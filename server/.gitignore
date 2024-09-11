@@ -1,0 +1,9 @@
+# Directories...
+src/dist
+src/downloads
+src/node_modules
+
+src/*lock.json
+src/*.log
+src/*.log.gz
+/node_modules/
