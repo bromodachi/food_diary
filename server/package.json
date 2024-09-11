@@ -1,0 +1,40 @@
+{
+  "name": "food_diary",
+  "version": "1.0.0",
+  "main": "src/index.js",
+  "scripts": {
+    "build": "node_modules/.bin/tsc --project ./tsconfig.json",
+    "dev": "node_modules/.bin/tsc --project ./tsconfig.json --watch & NODE_ENV=development nodemon src/index.ts",
+    "test": "./node_modules/.bin/tsc --project ./tsconfig.json && node  --require ts-node/register --test test/*.test.ts",
+    "format": "npx prettier . --write"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "@types/cors": "^2.8.17",
+    "@types/dotenv": "^8.2.0",
+    "@types/express": "^4.17.21",
+    "@types/node": "^22.5.4",
+    "@types/supertest": "^6.0.2",
+    "nodemon": "^3.1.4",
+    "prettier": "3.3.3",
+    "supertest": "^7.0.0",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.5.4"
+  },
+  "include": [
+    "src/**/*.ts",
+    "config/**/*.ts"
+  ],
+  "dependencies": {
+    "body-parser": "^1.20.3",
+    "date-fns": "^4.1.0",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "pino": "^9.4.0",
+    "pino-http": "^10.3.0",
+    "zod": "^3.23.8"
+  }
+}

@@ -33,4 +33,6 @@ frontend/dist-ssr
 *.njsproj
 *.sln
 *.sw?
-/server/node_modules/
+/server/node_modules
+server/node_modules
+node_modules
