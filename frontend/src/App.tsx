@@ -34,7 +34,7 @@ import { WebServiceErrorCode } from "@/constants/WebServiceErrorCode";
 import { ALERT_MESSAGES } from "@/constants/ALERT_MESSAGES";
 
 function App() {
-  const [date, setDate] = React.useState<Date | undefined>(new UTCDate());
+  const [date, setDate] = React.useState<Date | undefined>(new Date());
   const [isLoading, setIsLoading] = React.useState(false);
 
   const [addOrEditDialogState, setAddOrEditDialogState] =
