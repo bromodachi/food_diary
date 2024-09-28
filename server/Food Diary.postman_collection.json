@@ -1,10 +1,10 @@
 {
   "info": {
-    "_postman_id": "c30eb573-3b31-4afc-9a6b-9ecc31bfaf82",
+    "_postman_id": "898fa07c-8087-4bec-8244-afb1247a467f",
     "name": "Food Diary",
-    "description": "# 🚀 Food Diary\n\nAll the available apis for the simple Food Diary web application!\n\nAll the varaiables you need are already set but, if for some reason it's not set, the minimum you need is the variable `base_url`. The value should be [<code>http://localhost:3000</code>](http://localhost:3000) or whatever port you've chagned it to.\n\n## Note\n\nThe PATCH and DELETE API sets the ID to 2. However, you should replace that id with whatever the id was returned in POST.",
+    "description": "# 🚀 Food Diary\n\nAll the available APIs for the simple Food Diary web application!\n\nAll the variables you need are already set but, if for some reason it's not set, the minimum you need is the variable base_url. The value should be [<code>http://localhost:3000</code>](http://localhost:3000/) or whatever port you've changed it to.\n\n## Note\n\nThe PATCH and DELETE API sets the ID to 2. However, you should replace that ID with whatever the ID was returned in POST.",
     "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-    "_exporter_id": "33955563"
+    "_exporter_id": "4051550"
   },
   "item": [
     {
@@ -41,7 +41,7 @@
             }
           ]
         },
-        "description": "You must pass the `start` and `end` params. These must be values that a string value a date object can take in.\n\nExample:\n\nstart: `2024-09-15`\n\nend: `2024-09-21`\n\nDates must be in the format of: `YYYY-MM-DD`"
+        "description": "You must pass the `start` and `end` parameters. These must be values that a string value a date object can take in.\n\nExample:\n\nstart: `2024-09-15`\n\nend: `2024-09-21`\n\nDates must be in the format of `YYYY-MM-DD`"
       },
       "response": []
     },
@@ -79,7 +79,7 @@
           "host": ["{{base_url}}"],
           "path": ["v1", "diary", "entries"]
         },
-        "description": "To create an entry, you must send a POST with the data. \"date\", \"meal\", \"entries\".\n\n| **body param name** | **type** | **example value** |\n| --- | --- | --- |\n| date | string. Must be in the format `YYYY-MM-DD` | `2024-10-24` |\n| meal | string | `lunch` |\n| entries | string\\[\\] | `[\"eggs\"]` |\n\nAll available meal type:\n\n- breakfast\n    \n- lunch\n    \n- dinner\n    \n- snacks\n    \n- drinks"
+        "description": "To create an entry, you must send a POST with the data. \"date\", \"meal\", and \"entries\".\n\n| **body param name** | **type** | **example value** |\n| --- | --- | --- |\n| date | string. Must be in the format `YYYY-MM-DD` | `2024-10-24` |\n| meal | string | `lunch` |\n| entries | string\\[\\] | `[\"eggs\"]` |\n\nAll available meal types:\n\n- breakfast\n    \n- lunch\n    \n- dinner\n    \n- snacks\n    \n- drinks"
       },
       "response": []
     },
@@ -117,7 +117,7 @@
           "host": ["{{base_url}}"],
           "path": ["v1", "diary", "entries", "8"]
         },
-        "description": "`http://localhost:3000/v1/diary/entries/:id`\n\nOnce you've created an id or know the ID of a previous entry, you can update the entry. Currently, we only accept patch requests(only update a portion of the entries for a meal). However, any entry for that meal will be replaced by the entries you passed.\n\n| **body param name** | **type** | **example value** |\n| --- | --- | --- |\n| meal | string | `lunch` |\n| entries | string\\[\\] | `[\"eggs\"]` |\n\nAll available meal type:\n\n- breakfast\n    \n- lunch\n    \n- dinner\n    \n- snacks\n    \n- drinks"
+        "description": "`http://localhost:3000/v1/diary/entries/:id`\n\nOnce you've created an ID or know the ID of a previous entry, you can update the entry. Currently, we only accept patch requests(only update a portion of the entries for a meal). However, any entry for that meal will be replaced by the entries you passed.\n\n| **body param name** | **type** | **example value** |\n| --- | --- | --- |\n| meal | string | `lunch` |\n| entries | string\\[\\] | `[\"eggs\"]` |\n\nAll available meal types:\n\n- breakfast\n    \n- lunch\n    \n- dinner\n    \n- snacks\n    \n- drinks"
       },
       "response": []
     },
@@ -155,7 +155,7 @@
           "host": ["{{base_url}}"],
           "path": ["v1", "diary", "entries", "8"]
         },
-        "description": "`http://localhost:3000/v1/diary/entries/:id`\n\nIf you want to delete all entries for a particular day, you must pass the id of that day.\n\nThe result will be empty but the status code will be 204."
+        "description": "`http://localhost:3000/v1/diary/entries/:id`\n\nIf you want to delete all entries for a particular day, you must pass the ID of that day.\n\nThe result will be empty but the status code will be 204."
       },
       "response": []
     }

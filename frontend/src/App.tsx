@@ -200,7 +200,7 @@ function App() {
 
   /**
    * Actually attempts to retrieve the diary entry from the user data object.
-   * If the key doesn't exist of the weekday array is not initialized yet, undefined
+   * If the key doesn't exist or the weekday array is not initialized yet, undefined
    * can be returned.
    * @param column
    */
@@ -320,7 +320,7 @@ function App() {
         <div className="flex flex-col divide-y w-[760px] md:w-[1216px]">
           {mealTypeArray.map((meal, row) => (
             <div key={`meal-day-${row}`} className="grid grid-cols-8 divide-x">
-              {/*The meal(breakfast, lunch, dinner) column*/}
+              {/*The meal(e.g. breakfast, lunch, dinner) column*/}
               {
                 <div
                   className={cn(

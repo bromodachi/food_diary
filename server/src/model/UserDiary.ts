@@ -17,12 +17,8 @@ export type UserEntry = {
 };
 
 /**
- * They key is a date in the format of "2024/9/23". The value is UserEntry
+ * They key is a date in the format of YYYY-MM-DD(e.g. "2024-09-23"). The value is UserEntry
  */
 export type UserEntryByDate = {
   [key: string]: UserEntry | undefined;
 };
-
-// TODO: In insert, check if the date already exists.
-// If it does, just throw an error.
-// Updating and getting.

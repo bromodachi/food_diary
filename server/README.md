@@ -1,22 +1,24 @@
-# Food Diary Server
+# Basic Food Diary Server
 
 A really simple server implementation of a food diary. Runs on Node.js but uses the express framework
 to avoid reinventing the wheel to handle requests and responses.
 
-This application simply records what a user has ate for a meal(breakfast, lunch, dinner, snacks, drinks).
+This application simply records what a user has eaten for a meal(breakfast, lunch, dinner, snacks, drinks).
 A user can either create an entry for a day, update an entry, delete entries for an entire day, or list all entries for a date range.
-Everything is done in in-memory. I was about to use sql-lite to emulate a running on postgres or mysql but decided to simplify it even more with just using
+Everything is done in in-memory. I was about to use SQL-lite to emulate a running on Postgres or MySQL but decided to simplify it even more by just using
 a simple data structure: an array.
 
-For retrieving entries, we sort the array then use binary search to search for specific entries(mostly for dates).
+For retrieving entries, we sort the array and then use binary search to search for specific entries(mostly for dates).
 
 The server timezone is set to UTC.
 
 ## Configuration
 
-If you want to change the PORT of the server, you can do by changing SERVER_PORT to whatever port you want. However,
+If you want to change the PORT of the server, you can do so by changing SERVER_PORT to whatever port you want. However,
 if you do update this, please update the port of `VITE_SERVER_PORT` to 3000.
-Note: CORS will be enabled to all origin if we're in the dev environment. On production, we shouldn't turn this on.
+
+> Note: CORS will be enabled for all origins if we're in the dev environment. On production, we shouldn't turn this on.
+
 Also, ideally, the prod env should not be using the in-memory repository.
 
 ## Scripts Available
@@ -41,7 +43,7 @@ Each API validates the request via `zod`. If zod can't parse the request, we'll 
 
 ### Getting entries
 
-You must pass the start and end params. These must be values that a string value a date object can take in.
+You must pass the start and end parameters. These must be values that a string value a date object can take in.
 
 Example:
 
@@ -50,7 +52,7 @@ Example:
 | start            | `2024-09-15`  |
 | end              | `2024-09-21`  |
 
-Dates must be in the format of: YYYY-MM-DD
+Dates must be in the format of` YYYY-MM-DD`.
 
 You can retrieve all entries a user has made with the following curl command:
 
@@ -112,7 +114,7 @@ Example result:
 
 ### Creating an entry
 
-To create an entry, you must send a POST with the data. "date", "meal", "entries".
+To create an entry, you must send a POST with the data. "date", "meal", and "entries".
 
 | body param name | type                                       | example      |
 | --------------- | ------------------------------------------ | ------------ |
@@ -120,7 +122,7 @@ To create an entry, you must send a POST with the data. "date", "meal", "entries
 | meal            | string                                     | `breakfast`  |
 | entries         | string[]                                   | `["eggs"]`   |
 
-All available meal type:
+All available meal types:
 
 - breakfast
 - lunch
@@ -157,7 +159,7 @@ Example result:
 
 `http://localhost:3000/v1/diary/entries/:id`
 
-Once you've created an id or know the ID of a previous entry, you can update the entry.
+Once you've created an ID or know the ID of a previous entry, you can update the entry.
 Currently, we only accept patch requests(only update a portion of the entries for a meal).
 However, any entry for that meal will be replaced by the entries you passed.
 
@@ -166,7 +168,7 @@ However, any entry for that meal will be replaced by the entries you passed.
 | meal                | string     | `lunch`           |
 | entries             | string\[\] | `["eggs"]`        |
 
-All available meal type:
+All available meal types:
 
 - breakfast
 - lunch
@@ -203,7 +205,7 @@ Example result:
 
 `http://localhost:3000/v1/diary/entries/:id`
 
-If you want to delete all entries for a particular day, you must pass the id of that day.
+If you want to delete all entries for a particular day, you must pass the ID of that day.
 
 ```shell
 curl --request DELETE 'http://localhost:3000/v1/diary/entries/12'

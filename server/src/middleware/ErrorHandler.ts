@@ -9,7 +9,7 @@ import {
 
 /**
  * Catches all exception thrown. If an unknown error, we'll log it as an "error".
- * For a ServiceError, if the statusCode is above 500, we'll also log it as an error.
+ * For a ServiceError, if the statusCode is equal to or above 500, we'll also log it as an error.
  * Anything between 300-499, it'll be a warn instead.
  *
  * @param err

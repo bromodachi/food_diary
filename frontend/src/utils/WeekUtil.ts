@@ -6,7 +6,7 @@ import { UTCDate } from "@date-fns/utc";
  * If null or undefined is given as a parameter,
  * we'll assume it's the current date.
  *
- * Uses UTC dates to avoid dealing with timezones(we only care about date and not datetime)/
+ * Uses UTC dates to avoid dealing with timezones(we only care about date and not datetime).
  * @param date
  */
 export function getWeek(date: Date | undefined | null): Date[] {

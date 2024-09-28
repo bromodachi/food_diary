@@ -1,12 +1,12 @@
 # Food Diary Frontend
 
-This is the frontend web application of the food diary. You must have food diary server running in the background.
+This is the frontend web application of the food diary. You must have the food diary server running in the background.
 
 ## Running the program
 
-Either use start_services.sh that can be found a directory above or follow the next few commands.
+Either use `start_services.sh` which can be found in the directory above or follow the next few commands.
 
-If running locally, you must first create an `.env.local` file.
+If running locally, you must first create a `.env.local` file.
 
 ```shell
 touch .env.local

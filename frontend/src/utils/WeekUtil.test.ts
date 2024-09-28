@@ -3,7 +3,7 @@ import { getWeek } from "@/utils/WeekUtil";
 import { addDays, startOfDay } from "date-fns";
 import { UTCDate } from "@date-fns/utc";
 
-test("Get the week of days of week for September 13th, a Friday", () => {
+test("Get the days in the week of September 13th, a Friday", () => {
   const days = getWeek(new Date(2024, 8, 13));
   // September 8, 2024
   const tempDay = startOfDay(new UTCDate(2024, 8, 8));
@@ -14,7 +14,7 @@ test("Get the week of days of week for September 13th, a Friday", () => {
   expect(days).toEqual(expectedDays);
 });
 
-test("For any day of the week of september 8th, should give us the correct remaining of the week", () => {
+test("Get the days in the week of September 8th", () => {
   for (let i = 8; i <= 13; i++) {
     const days = getWeek(new Date(2024, 8, i));
     // September 8, 2024
@@ -27,7 +27,7 @@ test("For any day of the week of september 8th, should give us the correct remai
   }
 });
 
-test("Given a a week in August, it should also give us the weekday of that week", () => {
+test("Get the days in the week of August 13th", () => {
   const days = getWeek(new Date(2024, 7, 13));
   // August 11, 2024
   const tempDay = startOfDay(new UTCDate(2024, 7, 11));
