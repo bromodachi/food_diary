@@ -51,6 +51,7 @@ function App() {
     useState<ConfirmationDialogState>({
       isOpen: false,
       column: undefined,
+      date: undefined,
     });
 
   const [weekdays, setWeekdays] = useState<Date[]>([]);
@@ -289,6 +290,12 @@ function App() {
     setClearConfirmationDialogState({
       isOpen: true,
       column: column,
+      date:
+        weekdays.length <= (column ?? 0)
+          ? undefined
+          : column
+            ? getDateAsString(weekdays[column])
+            : "",
     });
   }
 
@@ -296,6 +303,7 @@ function App() {
     setClearConfirmationDialogState({
       isOpen: false,
       column: undefined,
+      date: "",
     });
   }
 

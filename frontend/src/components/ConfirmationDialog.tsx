@@ -12,6 +12,7 @@ import {
 export class ConfirmationDialogState {
   isOpen: boolean = false;
   column: number | undefined;
+  date: string | undefined;
 }
 
 export interface ConfirmationDialogProps {
@@ -31,14 +32,14 @@ export function ConfirmationDialog({
     }
   };
 
-  const { isOpen } = state;
+  const { isOpen, date } = state;
   return (
     <AlertDialog open={isOpen} onOpenChange={handleOnOpenChange}>
       <AlertDialogContent>
         <AlertDialogHeader>
           <AlertDialogTitle>Are you absolutely sure?</AlertDialogTitle>
           <AlertDialogDescription>
-            This will clear all entries for each meal on this day.
+            This will clear all entries for each meal on this day({date ?? ""}).
           </AlertDialogDescription>
         </AlertDialogHeader>
         <AlertDialogFooter>
