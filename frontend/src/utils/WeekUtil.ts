@@ -10,7 +10,7 @@ import { UTCDate } from "@date-fns/utc";
  * @param date
  */
 export function getWeek(date: Date | undefined | null): Date[] {
-  const d = date ?? new UTCDate();
+  const d = date ?? new Date();
   const utc = new UTCDate(d.getFullYear(), d.getMonth(), d.getDate());
   const utcDate = startOfWeek(utc);
 
